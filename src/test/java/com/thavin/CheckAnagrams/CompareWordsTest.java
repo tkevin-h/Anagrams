@@ -5,21 +5,24 @@ import org.junit.jupiter.api.Test;
 
 class CompareWordsTest {
 
+    // Positive cases
     @Test
-    public void words_are_equal() {
-        CompareWords words = new CompareWords();
-        String a = "a";
-        String b = "a";
+    public void checkAnagram_shouldBeTrue_whenWordsAreEqual() {
+        String a = "abc";
+        String b = "abc";
 
-        assertTrue(words.checkAnagram(a, b), "Words are not the same.");
+        assertTrue(CompareWords.checkAnagram(a, b), "Words are not the same.");
     }
 
     @Test
-    public void number_of_letters_unequal() {
-        CompareWords words = new CompareWords();
-        String a = "a";
-        String b = "ab";
+    public void checkLettersAmount_shouldBeTrue_whenNumberOfLettersAreEqual() {
+        String a = "abcd";
+        String b = "bcda";
 
-        assertFalse(words.checkLettersAmount(a, b), "Letters count are the same.");
+        assertTrue(CompareWords.checkLettersAmount(a, b), "Letters count are the not same.");
     }
+
+    // Edge cases
+
+    // Negative cases
 }
