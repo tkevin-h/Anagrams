@@ -8,14 +8,19 @@ class SortTest {
 
     // Positive cases
     @Test
-    public void sortWord_shouldSortWordAlphabetically_whenGivenWord() {
+    void sortWord_shouldSortWordAlphabetically_whenGivenWord() {
         String word = "cba";
 
         assertEquals("abc", Sort.sortWord(word));
     }
 
-
     // Edge cases
 
     // Negative cases
+    @Test
+    void sortWord_shouldFail_whenWordIsNotSorted() {
+        String word = "cba";
+
+        assertNotEquals("bca", Sort.sortWord(word));
+    }
 }

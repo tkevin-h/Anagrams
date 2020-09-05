@@ -7,7 +7,7 @@ class CompareWordsTest {
 
     // Positive cases
     @Test
-    public void checkAnagram_shouldBeTrue_whenWordsAreEqual() {
+    void checkAnagram_shouldBeTrue_whenWordsAreEqual() {
         String a = "abc";
         String b = "abc";
 
@@ -15,7 +15,7 @@ class CompareWordsTest {
     }
 
     @Test
-    public void checkLettersAmount_shouldBeTrue_whenNumberOfLettersAreEqual() {
+    void checkLettersAmount_shouldBeTrue_whenNumberOfLettersAreEqual() {
         String a = "abcd";
         String b = "bcda";
 
