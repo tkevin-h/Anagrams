@@ -22,6 +22,7 @@ class CompareWordsTest {
         assertTrue(CompareWords.checkLettersAmount(a, b), "Letters count are the not same.");
     }
 
+
     // Edge cases
 
     // Negative cases
