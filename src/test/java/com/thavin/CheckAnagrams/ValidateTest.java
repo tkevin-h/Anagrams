@@ -5,15 +5,39 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ValidateTest {
+
     // Positive cases
     @Test
     void validateWord_shouldReturnTrue_whenInputIsLettersOnly() {
         String word = "abc";
 
-        assertFalse(Validate.validateWord(word), "word does not contain letters only");
+        assertTrue(Validate.validateWord(word), "word contains letters only");
     }
 
     @Test
+    void validateWord_shouldReturnFalse_whenInputContainsNumbers() {
+        String word = "abc123";
+
+        assertFalse(Validate.validateWord(word), "word contains numbers");
+    }
+
+    @Test
+    void validateWord_shouldReturnFalse_whenInputContainsSpecialCharacters() {
+        String word = "abc123#@%";
+
+        assertFalse(Validate.validateWord(word), "word contains special characters");
+    }
+
+    @Test
+    void validateWord_shouldReturnFalse_whenInputIsEmpty() {
+        String word = "";
+        String word2 = "     ";
+
+        assertFalse(Validate.validateWord(word), "word is empty");
+        assertFalse(Validate.validateWord(word2), "word is empty");
+    }
+
+    /*@Test
     void isEmpty_shouldReturnFalse_whenInputIsNotEmpty() {
         String word = "abc";
 
@@ -32,7 +56,7 @@ class ValidateTest {
         String word = "abc*";
 
         assertFalse(Validate.containsSpecialCharacters(word), "word contains special characters");
-    }
+    }*/
 
     // Edge cases
 

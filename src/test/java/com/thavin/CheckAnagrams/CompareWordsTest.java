@@ -7,7 +7,7 @@ class CompareWordsTest {
 
     // Positive cases
     @Test
-    void checkAnagram_shouldBeTrue_whenWordsAreEqual() {
+    void checkAnagram_shouldReturnTrue_whenWordsAreEqual() {
         String a = "abc";
         String b = "abc";
 
@@ -15,7 +15,7 @@ class CompareWordsTest {
     }
 
     @Test
-    void checkLettersAmount_shouldBeTrue_whenNumberOfLettersAreEqual() {
+    void checkLettersAmount_shouldReturnTrue_whenNumberOfLettersAreEqual() {
         String a = "abcd";
         String b = "bcda";
 
@@ -26,4 +26,19 @@ class CompareWordsTest {
     // Edge cases
 
     // Negative cases
+    @Test
+    void checkAnagram_shouldReturnFalse_whenWordsAreNotEqual() {
+        String a = "abcd";
+        String b = "abce";
+
+        assertFalse(CompareWords.checkAnagram(a, b), "Words are not the same.");
+    }
+
+    @Test
+    void checkAnagram_shouldReturnFalse_whenNumberOfLettersNotEqual() {
+        String a = "abc";
+        String b = "abcd";
+
+        assertFalse(CompareWords.checkLettersAmount(a, b), "Words are not the same.");
+    }
 }

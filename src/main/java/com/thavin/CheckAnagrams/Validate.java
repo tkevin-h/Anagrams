@@ -3,18 +3,22 @@ package com.thavin.CheckAnagrams;
 public class Validate {
 
     public static boolean validateWord(String word) {
-        return true;
+        if(word.isBlank()) {
+            return false;
+        }
+
+        return word.matches("[a-zA-Z]+");
     }
 
-    public static boolean isEmpty(String word) {
-        return true;
+    /*public static boolean isEmpty(String word) {
+        return word.isEmpty();
     }
 
     public static boolean containsNumbers(String word) {
-        return true;
+        return word.matches("\\d+");
     }
 
     public static boolean containsSpecialCharacters(String word) {
-        return true;
-    }
+        return word.matches("[$&+,:;=\\\\?@#|/'<>.^*()%!-]");
+    }*/
 }
