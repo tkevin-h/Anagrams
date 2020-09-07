@@ -7,7 +7,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class ValidateTest {
     // Positive cases
     @Test
-    void isEmpty_shouldReturnFalse_whenInputIsLettersOnly() {
+    void validateWord_shouldReturnTrue_whenInputIsLettersOnly() {
+        String word = "abc";
+
+        assertFalse(Validate.validateWord(word), "word does not contain letters only");
+    }
+
+    @Test
+    void isEmpty_shouldReturnFalse_whenInputIsNotEmpty() {
         String word = "abc";
 
         assertFalse(Validate.isEmpty(word), "word is empty");
