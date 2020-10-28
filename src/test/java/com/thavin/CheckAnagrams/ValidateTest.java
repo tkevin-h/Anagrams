@@ -1,10 +1,9 @@
 package com.thavin.CheckAnagrams;
 
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class ValidateTest {
+public class ValidateTest {
 
     // Positive cases
     @Test

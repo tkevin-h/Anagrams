@@ -3,7 +3,7 @@ package com.thavin.CheckAnagrams;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-class CompareWordsTest {
+public class CompareWordsTest {
 
     // Positive cases
     @Test
