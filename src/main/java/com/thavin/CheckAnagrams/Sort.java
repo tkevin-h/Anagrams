@@ -21,13 +21,17 @@ public class Sort {
             combinations.add(word);
         }
         else {
+            //Take each letter and combine with all other letters
             for(int i = 0; i < word.length(); i++) {
                 String removeLetter = word.substring(0, i);
                 String newWord = word.substring(i + 1);
                 String remaining  = removeLetter+newWord;
 
+                //Recursive
                 for(String permutation : findCombinations(remaining)) {
                     combinations.add(word.charAt(i) + permutation);
+                    //For testing
+                    System.out.println(word.charAt(i) + permutation);
                 }
             }
         }

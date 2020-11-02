@@ -1,4 +1,5 @@
 import com.thavin.CheckAnagrams.CompareWords;
+import com.thavin.CheckAnagrams.Sort;
 import com.thavin.CheckAnagrams.Validate;
 
 import java.util.Scanner;
@@ -9,7 +10,11 @@ public class Main {
         String wordOne;
         String wordTwo;
 
-        do {
+        System.out.print("Type first word (letters only): ");
+        wordOne = wordInput.nextLine().toLowerCase();
+        Sort.findCombinations(wordOne);
+
+        /*do {
             System.out.print("Type first word (letters only): ");
             wordOne = wordInput.nextLine().toLowerCase();
         } while (!Validate.validateWord(wordOne));
@@ -23,6 +28,6 @@ public class Main {
             System.out.print("These words are anagrams");
         } else {
             System.out.print("These words are not anagrams");
-        }
+        }*/
     }
 }
