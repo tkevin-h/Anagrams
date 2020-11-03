@@ -29,9 +29,13 @@ public class Sort {
 
                 //Recursive
                 for(String permutation : findCombinations(remaining)) {
-                    combinations.add(word.charAt(i) + permutation);
-                    //For testing
-                    System.out.println(word.charAt(i) + permutation);
+                    String wordCombo = word.charAt(i) + permutation;
+
+                    //why is this still adding words that have less characters than the original word?
+                    if (wordCombo.length() == word.length()) {
+                        combinations.add(word.charAt(i) + permutation);
+                        System.out.println(word.charAt(i) + permutation);
+                    }
                 }
             }
         }

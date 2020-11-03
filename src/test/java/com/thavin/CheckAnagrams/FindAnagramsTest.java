@@ -3,20 +3,23 @@ package com.thavin.CheckAnagrams;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.Test;
 
+import java.util.Set;
+import java.util.TreeSet;
+
 public class FindAnagramsTest {
     //Positive cases
     @Test
     void find_shouldReturnArrayOfWords_whenWordIsAnagram() {
-        String word1 = "abc";
-        String word2 = "acb";
-        String word3 = "bac";
-        String word4 = "bca";
-        String word5 = "cba";
-        String word6 = "cab";
+        Set<String> words = new TreeSet<>();
+        words.add("abc");
+        words.add("acb");
+        words.add("bac");
+        words.add("bca");
+        words.add("cba");
+        words.add("cab");
 
-        String[] combinations = new String[] {word1, word2, word3, word4, word5, word6};
-        String[] wordCombinations = new String[] {word6};
+        String[] wordCombinations = new String[] {"cab"};
 
-        //assertArrayEquals(wordCombinations, find(combinations));
+        assertArrayEquals(wordCombinations, find(words));
     }
 }
