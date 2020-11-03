@@ -7,25 +7,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class FindAnagrams {
-    public static String[] find(Set<String> combinations) throws IOException {
-        BufferedReader dictionary = new BufferedReader(new FileReader("words.txt"));
-        List<String> words = new ArrayList<>();
+    //public static String[] find(Set<String> combinations) {
+    //}
 
-        String word;
-
-        while((word = dictionary.readLine()) != null) {
-            words.add(word);
-        }
-        dictionary.close();
-
-
-    }
-
-    public static List<String> dictionary(String fileName) throws IOException {
+    public static Set<String> buildDictionary(String fileName) throws IOException {
         BufferedReader dictionary = new BufferedReader(new FileReader(fileName));
-        List<String> words = new ArrayList<>();
+        Set<String> words = new TreeSet<>();
 
         String word;
 
