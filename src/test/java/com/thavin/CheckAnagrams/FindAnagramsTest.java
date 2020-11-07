@@ -9,7 +9,7 @@ import java.util.TreeSet;
 public class FindAnagramsTest {
     //Positive cases
     @Test
-    public void find_shouldReturnArrayOfWords_whenWordIsAnagram() {
+    public void find_shouldReturnSetOfAnagrams_whenWordIsAnagram() throws IOException {
         Set<String> words = new TreeSet<>();
         words.add("abc");
         words.add("acb");
@@ -18,9 +18,10 @@ public class FindAnagramsTest {
         words.add("cba");
         words.add("cab");
 
-        String[] wordCombinations = new String[] {"cab"};
+        Set<String> wordCombinations = new TreeSet<>();
+        wordCombinations.add("cab");
 
-        assertArrayEquals(wordCombinations, find(words));
+         assertEquals(wordCombinations, FindAnagrams.find(words));
     }
 
     @Test
@@ -28,6 +29,6 @@ public class FindAnagramsTest {
         Set<String> dictionary = new TreeSet<>();
         dictionary.add("abc");
 
-        assertEquals(dictionary, FindAnagrams.buildDictionary("./resources/test_words.txt"));
+        assertEquals(dictionary, FindAnagrams.buildDictionary("./resources/words.txt"));
     }
 }

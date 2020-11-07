@@ -10,8 +10,15 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class FindAnagrams {
-    //public static String[] find(Set<String> combinations) {
-    //}
+    public static Set<String> find(Set<String> combinations) throws IOException {
+        Set<String> dictionary = buildDictionary("./resources/words.txt");
+
+        if(dictionary.retainAll(combinations)) {
+            return dictionary;
+        } else {
+            return null;
+        }
+    }
 
     public static Set<String> buildDictionary(String fileName) throws IOException {
         BufferedReader dictionary = new BufferedReader(new FileReader(fileName));
